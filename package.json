@@ -1,7 +1,7 @@
 {
   "name": "@xjectro/react",
   "private": false,
-  "version": "1.0.48",
+  "version": "1.0.57",
   "description": "A React UI component library for Xjectro with Tailwind CSS, Radix UI, custom hooks, and design system utilities",
   "license": "MIT",
   "repository": {
@@ -43,40 +43,50 @@
       "import": "./dist/includes/postcss.config.mjs",
       "require": "./dist/includes/postcss.config.cjs"
     },
-    "./hooks": {
+    "./ui/hooks": {
       "types": "./dist/ui/hooks/index.d.ts",
       "import": "./dist/ui/hooks/index.mjs",
       "require": "./dist/ui/hooks/index.cjs"
     },
-    "./lib": {
+    "./ui/lib": {
       "types": "./dist/ui/lib/index.d.ts",
       "import": "./dist/ui/lib/index.mjs",
       "require": "./dist/ui/lib/index.cjs"
     },
-    "./components": {
+    "./ui/components": {
       "types": "./dist/ui/components/index.d.ts",
       "import": "./dist/ui/components/index.mjs",
       "require": "./dist/ui/components/index.cjs"
     },
-    "./components/*": {
+    "./ui/components/*": {
       "types": "./dist/ui/components/*.d.ts",
       "import": "./dist/ui/components/*.mjs",
       "require": "./dist/ui/components/*.cjs"
     },
-    "./hooks/*": {
+    "./ui/hooks/*": {
       "types": "./dist/ui/hooks/*.d.ts",
       "import": "./dist/ui/hooks/*.mjs",
       "require": "./dist/ui/hooks/*.cjs"
     },
-    "./lib/*": {
+    "./ui/lib/*": {
       "types": "./dist/ui/lib/*.d.ts",
       "import": "./dist/ui/lib/*.mjs",
       "require": "./dist/ui/lib/*.cjs"
     },
-    "./utils/*": {
+    "./ui/utils/*": {
       "types": "./dist/ui/utils/*.d.ts",
       "import": "./dist/ui/utils/*.mjs",
       "require": "./dist/ui/utils/*.cjs"
+    },
+    "./utils/hooks/*": {
+      "types": "./dist/utils/hooks/*.d.ts",
+      "import": "./dist/utils/hooks/*.mjs",
+      "require": "./dist/utils/hooks/*.cjs"
+    },
+    "./utils/lib": {
+      "types": "./dist/utils/lib/*.d.ts",
+      "import": "./dist/utils/lib/*.mjs",
+      "require": "./dist/utils/lib/*.cjs"
     }
   },
   "scripts": {
@@ -154,6 +164,11 @@
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
     "zod": "^3.24.2"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.2.0 <5",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.6",

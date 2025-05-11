@@ -19,7 +19,7 @@ const navbarVariants = cva(
       },
       layout: {
         default: 'w-full',
-        floating: '@container/navbar-floating',
+        floating: 'w-[var(--xjectro-container-width)] mx-auto px-5',
         centered: 'max-w-screen-xl mx-auto',
       },
       shape: {
@@ -113,7 +113,7 @@ export function Navbar({
     layout === 'default' ? (
       <div
         className={cn(
-          '@container/navbar-default flex h-full w-full items-center gap-5',
+          'mx-auto flex h-full w-[var(--xjectro-container-width)] items-center gap-5 px-5',
           className,
         )}
       >

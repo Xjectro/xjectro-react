@@ -1,47 +1,6 @@
 import animate from 'tailwindcss-animate';
-import plugin from 'tailwindcss/plugin';
 import containerQueries from '@tailwindcss/container-queries';
 import { posix as path } from 'path';
-
-type ContainerDef = { key: string; apply: string; maxWidth?: string };
-const containers: ContainerDef[] = [
-  {
-    key: 'main',
-    apply: 'mx-auto w-full px-5',
-    maxWidth: 'var(--container-size)',
-  },
-  { key: 'centered', apply: 'mx-auto !w-[90vw] md:w-[80vw] lg:w-[60vw]' },
-  {
-    key: 'navbar-floating',
-    apply: 'mx-auto px-5',
-    maxWidth: 'var(--container-size)',
-  },
-  {
-    key: 'navbar-default',
-    apply: 'mx-auto px-5',
-    maxWidth: 'var(--container-size)',
-  },
-  { key: 'footer-centered', apply: 'mx-auto w-[90vw] md:w-[80vw] lg:w-[60vw]' },
-  {
-    key: 'footer-default',
-    apply: 'mx-auto px-5',
-    maxWidth: 'var(--container-size)',
-  },
-];
-const containerPlugin = plugin(({ addBase }) => {
-  const baseStyles = containers.reduce(
-    (acc, { key, apply, maxWidth }) => {
-      acc[`.@container/${key}`] = {
-        '@apply': apply,
-        'max-width': maxWidth || 'var(--container-size)',
-        container: `${key} / inline-size`,
-      };
-      return acc;
-    },
-    {} as Record<string, Record<string, string>>,
-  );
-  addBase(baseStyles);
-});
 
 const preset = {
   content: [
@@ -159,7 +118,7 @@ const preset = {
       },
     },
   },
-  plugins: [animate, containerQueries, containerPlugin],
+  plugins: [animate, containerQueries],
 };
 
 export default preset;

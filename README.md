@@ -105,7 +105,10 @@ Override variables in your own CSS or edit `node_modules/@xjectro/react/styles/t
 ```css
 :root {
   --radius: 0.5rem;
-  --container-size: 1200px;
+
+  --xjectro-container-width: 1200px;
+  --xjectro-container-padding: 5rem;
+  
   --chart-1: 0.9 0.2 40.0;
   /* …other vars */
 }

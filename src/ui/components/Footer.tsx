@@ -57,7 +57,9 @@ export function Footer({
       {...props}
     >
       {variant === 'default' ? (
-        <div className="@container/footer-default grid">{wrappedChildren}</div>
+        <div className="mx-auto grid max-w-[var(--xjectro-container-width)] px-5">
+          {wrappedChildren}
+        </div>
       ) : (
         wrappedChildren
       )}
@@ -65,7 +67,9 @@ export function Footer({
   );
 
   return variant === 'centered' ? (
-    <div className="@container/footer-centered">{footerContent}</div>
+    <div className="mx-auto w-[90vw] md:w-[80vw] lg:w-[60vw]">
+      {footerContent}
+    </div>
   ) : (
     footerContent
   );
