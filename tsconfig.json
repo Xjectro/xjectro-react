@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Next.js",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "incremental": false,
+    "isolatedModules": true,
+    "lib": ["es2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "node", 
+    "baseUrl": ".",
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true, 
+    "skipLibCheck": true,
+    "strict": true, 
+    "target": "ES2022", 
+    "outDir": "dist",
+    "plugins": [{ "name": "next" }], 
+    "allowJs": true,
+    "jsx": "react-jsx", 
+    "noEmit": true, 
+    "types": ["webpack-env", "node"], 
+    "typeRoots": ["node_modules/@types"],
+    "paths": {
+      "@xjectro/react/*": ["src/*"] 
+    }
+  }
+}

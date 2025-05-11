@@ -1,9 +1,2 @@
 node_modules/
-src/
-.eslintrc.cjs
-.eslintignore
-.prettierrc
-.vscode/
-tsup.config.ts
 package-lock.json
-tsconfig.json
