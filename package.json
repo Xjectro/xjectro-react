@@ -1,7 +1,7 @@
 {
   "name": "@xjectro/react",
   "private": false,
-  "version": "1.0.59",
+  "version": "1.0.77",
   "description": "A React UI component library for Xjectro with Tailwind CSS, Radix UI, custom hooks, and design system utilities",
   "license": "MIT",
   "repository": {

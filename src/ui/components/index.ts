@@ -57,3 +57,5 @@ export * from './Container';
 export * from './LoadingIndicator';
 export * from './SelectableList';
 export * from './Provider';
+export * from './Carousel';
+export * from './CinematicCard';
