@@ -1,14 +1,13 @@
 import animate from 'tailwindcss-animate';
-import containerQueries from '@tailwindcss/container-queries';
 import { posix as path } from 'path';
 
 const preset = {
   content: [
-    '../ui/components/**/*.{js,cjs,mjs,ts,jsx,tsx}',
-    '../ui/hooks/**/*.{js,cjs,mjs,ts}',
-    '../ui/lib/**/*.{js,cjs,mjs,ts}',
-    '../ui/utils/**/*.{js,cjs,mjs,ts}',
-    '../includes/**/*.{js,cjs,mjs,ts}',
+    '../../react/dist/components/**/*.{js,cjs,mjs,ts,jsx,tsx}',
+    '../../react/dist/hooks/**/*.{js,cjs,mjs,ts}',
+    '../../react/dist/lib/**/*.{js,cjs,mjs,ts}',
+    '../../react/dist/utils/**/*.{js,cjs,mjs,ts}',
+    '../../shared/dist/**/*.{js,cjs,mjs,ts}',
   ].map((pattern) => path.join(__dirname, pattern)),
   theme: {
     extend: {
@@ -118,7 +117,7 @@ const preset = {
       },
     },
   },
-  plugins: [animate, containerQueries],
+  plugins: [animate],
 };
 
 export default preset;

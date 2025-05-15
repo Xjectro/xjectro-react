@@ -1,182 +1,31 @@
 {
-  "name": "@xjectro/react",
-  "private": false,
-  "version": "1.0.77",
-  "description": "A React UI component library for Xjectro with Tailwind CSS, Radix UI, custom hooks, and design system utilities",
+  "name": "xjectro",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Xjectro/xjectro-react.git"
-  },
-  "homepage": "https://github.com/Xjectro/xjectro-react#readme",
-  "bugs": {
-    "url": "https://github.com/Xjectro/xjectro-react/issues"
-  },
-  "keywords": [
-    "react",
-    "ui",
-    "components",
-    "tailwindcss",
-    "radix-ui",
-    "typescript",
-    "design-system",
-    "hooks",
-    "xjectro"
-  ],
   "author": "xjectro",
-  "files": [
-    "dist"
-  ],
   "type": "module",
-  "publishConfig": {
-    "access": "public"
-  },
-  "exports": {
-    "./theme.css": "./dist/ui/styles/theme.css",
-    "./tailwind.preset": {
-      "types": "./dist/includes/tailwind.preset.d.ts",
-      "import": "./dist/includes/tailwind.preset.mjs",
-      "require": "./dist/includes/tailwind.preset.cjs"
-    },
-    "./postcss.config": {
-      "types": "./dist/includes/postcss.config.d.ts",
-      "import": "./dist/includes/postcss.config.mjs",
-      "require": "./dist/includes/postcss.config.cjs"
-    },
-    "./ui/hooks": {
-      "types": "./dist/ui/hooks/index.d.ts",
-      "import": "./dist/ui/hooks/index.mjs",
-      "require": "./dist/ui/hooks/index.cjs"
-    },
-    "./ui/lib": {
-      "types": "./dist/ui/lib/index.d.ts",
-      "import": "./dist/ui/lib/index.mjs",
-      "require": "./dist/ui/lib/index.cjs"
-    },
-    "./ui/components": {
-      "types": "./dist/ui/components/index.d.ts",
-      "import": "./dist/ui/components/index.mjs",
-      "require": "./dist/ui/components/index.cjs"
-    },
-    "./ui/components/*": {
-      "types": "./dist/ui/components/*.d.ts",
-      "import": "./dist/ui/components/*.mjs",
-      "require": "./dist/ui/components/*.cjs"
-    },
-    "./ui/hooks/*": {
-      "types": "./dist/ui/hooks/*.d.ts",
-      "import": "./dist/ui/hooks/*.mjs",
-      "require": "./dist/ui/hooks/*.cjs"
-    },
-    "./ui/lib/*": {
-      "types": "./dist/ui/lib/*.d.ts",
-      "import": "./dist/ui/lib/*.mjs",
-      "require": "./dist/ui/lib/*.cjs"
-    },
-    "./ui/utils/*": {
-      "types": "./dist/ui/utils/*.d.ts",
-      "import": "./dist/ui/utils/*.mjs",
-      "require": "./dist/ui/utils/*.cjs"
-    },
-    "./utils/hooks/*": {
-      "types": "./dist/utils/hooks/*.d.ts",
-      "import": "./dist/utils/hooks/*.mjs",
-      "require": "./dist/utils/hooks/*.cjs"
-    },
-    "./utils/lib": {
-      "types": "./dist/utils/lib/*.d.ts",
-      "import": "./dist/utils/lib/*.mjs",
-      "require": "./dist/utils/lib/*.cjs"
-    }
-  },
   "scripts": {
     "build": "tsup",
-    "start": "node dist/index.cjs",
-    "lint": "eslint \"src/**/*.{ts,js}\" --fix",
-    "format": "prettier --write \"src/**/*.{ts,js,json,md,tsx,jsx,css,md}\"",
+    "lint": "eslint \"packages/**/*.{ts,js}\" --fix",
+    "format": "prettier --write \"./**/*.{ts,js,json,md,tsx,jsx,css,md}\"",
     "typecheck": "tsc --noEmit",
-    "release": "npm version patch && npm run build && npm publish"
+    "manage": "tsx ./manage.ts"
   },
   "dependencies": {
-    "@hookform/resolvers": "^4.1.3",
-    "@radix-ui/react-accordion": "^1.2.3",
-    "@radix-ui/react-alert-dialog": "^1.1.6",
-    "@radix-ui/react-aspect-ratio": "^1.1.2",
-    "@radix-ui/react-avatar": "^1.1.3",
-    "@radix-ui/react-checkbox": "^1.1.4",
-    "@radix-ui/react-collapsible": "^1.1.3",
-    "@radix-ui/react-context-menu": "^2.2.6",
-    "@radix-ui/react-dialog": "^1.1.6",
-    "@radix-ui/react-dropdown-menu": "^2.1.6",
-    "@radix-ui/react-hover-card": "^1.1.6",
-    "@radix-ui/react-label": "^2.1.2",
-    "@radix-ui/react-menubar": "^1.1.6",
-    "@radix-ui/react-navigation-menu": "^1.2.5",
-    "@radix-ui/react-popover": "^1.1.6",
-    "@radix-ui/react-progress": "^1.1.2",
-    "@radix-ui/react-radio-group": "^1.2.3",
-    "@radix-ui/react-scroll-area": "^1.2.3",
-    "@radix-ui/react-select": "^2.1.6",
-    "@radix-ui/react-separator": "^1.1.2",
-    "@radix-ui/react-slider": "^1.2.3",
-    "@radix-ui/react-slot": "^1.1.2",
-    "@radix-ui/react-switch": "^1.1.3",
-    "@radix-ui/react-tabs": "^1.1.3",
-    "@radix-ui/react-toggle": "^1.1.2",
-    "@radix-ui/react-toggle-group": "^1.1.2",
-    "@radix-ui/react-tooltip": "^1.1.8",
-    "@tailwindcss/container-queries": "^0.1.1",
     "@types/webpack-env": "^1.18.8",
-    "@vidstack/react": "^1.12.13",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "cmdk": "^1.1.1",
-    "embla-carousel-react": "^8.5.2",
-    "gradient-string": "^3.0.0",
-    "input-otp": "^1.4.2",
-    "lucide-react": "^0.475.0",
-    "motion": "^12.5.0",
-    "next": "^15.2.0",
-    "next-themes": "^0.4.4",
-    "ogl-typescript": "^0.1.40",
+    "commander": "^13.1.0",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "react": "18.3.1",
-    "react-day-picker": "8.10.1",
-    "react-dom": "18.3.1",
-    "react-hook-form": "^7.54.2",
-    "react-resizable-panels": "^2.1.7",
-    "react-use": "^17.6.0",
-    "recharts": "^2.15.1",
-    "sonner": "^2.0.1",
-    "tailwind-merge": "^3.0.1",
-    "tailwindcss-animate": "^1.0.7",
-    "vaul": "^1.1.2"
-  },
-  "peerDependencies": {
-    "@tailwindcss/container-queries": "^0.1.1",
-    "tailwindcss": ">=3.2.0 <5",
-    "tailwindcss-animate": "^1.0.7"
+    "tsx": "^4.19.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.6",
-    "@turbo/gen": "^2.4.2",
-    "@types/node": "^20.17.30",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@types/tailwindcss": "^3.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.49.0",
-    "@typescript-eslint/parser": "^5.49.0",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-storybook": "^0.12.0",
     "prettier": "^3.5.3",
-    "tailwindcss": "^4.0.8",
     "tsup": "^8.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
   },
-  "overrides": {
-    "cmdk": {
-      "@types/react": "^18.0.0",
-      "@types/react-dom": "^18.0.0"
-    }
-  }
+  "workspaces": [
+    "packages/*"
+  ]
 }

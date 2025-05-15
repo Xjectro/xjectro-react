@@ -1,0 +1,66 @@
+{
+  "name": "@xjectro/react-shared",
+  "private": false,
+  "version": "1.0.90",
+  "description": "A React UI component library for Xjectro with Tailwind CSS, Radix UI, custom hooks, and design system utilities",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xjectro/xjectro-react.git"
+  },
+  "homepage": "https://github.com/Xjectro/xjectro-react#readme",
+  "bugs": {
+    "url": "https://github.com/Xjectro/xjectro-react/issues"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "tailwindcss",
+    "radix-ui",
+    "typescript",
+    "design-system",
+    "hooks",
+    "xjectro"
+  ],
+  "author": "xjectro",
+  "files": [
+    "dist",
+    "theme.css"
+  ],
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "release": "npm version patch && npm publish"
+  },
+  "exports": {
+    "./tailwind.preset": {
+      "types": "./dist/tailwind.preset.d.ts",
+      "import": "./dist/tailwind.preset.mjs",
+      "require": "./dist/tailwind.preset.cjs"
+    },
+    "./postcss.config": {
+      "types": "./dist/postcss.config.d.ts",
+      "import": "./dist/postcss.config.mjs",
+      "require": "./dist/postcss.config.cjs"
+    },
+    "./theme.css": "./theme.css"
+  },
+  "dependencies": {
+    "@vidstack/react": "^1.12.13",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.2.0 <5",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.6",
+    "tailwindcss": "^4.0.8",
+    "typescript": "^5.0.0",
+    "@types/tailwindcss": "^3.0.11"
+  }
+}

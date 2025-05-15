@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Next.js",
+  "display": "React.js",
   "compilerOptions": {
     "declaration": true,
     "declarationMap": true,
@@ -9,22 +9,21 @@
     "isolatedModules": true,
     "lib": ["es2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "moduleResolution": "node", 
+    "moduleResolution": "node",
     "baseUrl": ".",
     "noUncheckedIndexedAccess": true,
-    "resolveJsonModule": true, 
+    "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true, 
-    "target": "ES2022", 
+    "strict": true,
+    "target": "ES2022",
     "outDir": "dist",
-    "plugins": [{ "name": "next" }], 
+    "plugins": [{ "name": "react" }],
     "allowJs": true,
-    "jsx": "react-jsx", 
-    "noEmit": true, 
-    "types": ["webpack-env", "node"], 
-    "typeRoots": ["node_modules/@types"],
-    "paths": {
-      "@xjectro/react/*": ["src/*"] 
-    }
-  }
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "emitDeclarationOnly": true,
+    "types": ["webpack-env", "node"],
+    "typeRoots": ["node_modules/@types"]
+  },
+  "exclude": ["dist", "node_modules", "**/dist"]
 }

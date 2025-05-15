@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import * as SheetPrimitive from '@radix-ui/react-dialog';
-import Link, { LinkProps } from 'next/link';
 import { XIcon } from 'lucide-react';
 
 import { cn } from '../lib/utils';
@@ -134,7 +133,12 @@ function SheetTitle({
   return (
     <SheetPrimitive.Title
       data-slot="sheet-title"
-      className={textVariants({ color: 'foreground', size: 'lg', className })}
+      className={textVariants({
+        color: 'foreground',
+        size: 'lg',
+        weight: 'bold',
+        className,
+      })}
       {...props}
     />
   );
@@ -156,12 +160,12 @@ function SheetDescription({
 function SheetItem({
   className,
   ...props
-}: LinkProps & { className?: string }) {
+}: React.ComponentProps<'button'> & { className?: string }) {
   return (
-    <Link
+    <button
       data-slot="sheet-item"
       className={cn(
-        'data-[color=surface]:text-ghost-foreground data-[color=primary]:text-primary-foreground data-[color=surface]:hover:bg-ghost-500 data-[color=primary]:hover:bg-primary-800 flex w-full items-center gap-2 rounded-md bg-transparent px-4 py-3 text-base transition-all',
+        'data-[color=surface]:text-ghost-foreground data-[color=primary]:text-primary-foreground data-[color=surface]:hover:bg-ghost-500 data-[color=primary]:hover:bg-primary-800 flex w-full cursor-pointer items-center gap-2 rounded-md bg-transparent px-4 py-3 text-base transition-all',
         className,
       )}
       {...props}
